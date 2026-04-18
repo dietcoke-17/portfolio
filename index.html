@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Anshu</title>
+    <meta
+      name="description"
+      content="Anshu is a coder building clean web products, useful interfaces, and thoughtful digital experiences."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="noise" aria-hidden="true"></div>
+    <div class="cursor" aria-hidden="true"></div>
+    <div class="frame-lines" aria-hidden="true">
+      <span class="frame-line frame-top"></span>
+      <span class="frame-line frame-right"></span>
+      <span class="frame-line frame-bottom"></span>
+      <span class="frame-line frame-left"></span>
+      <span class="frame-line frame-vertical frame-vertical-main"></span>
+      <span class="frame-line frame-horizontal"></span>
+    </div>
+
+    <div class="layout">
+      <main class="content" id="home">
+        <header class="topbar reveal">
+          <button
+            class="menu-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="menu-overlay"
+          >
+            <span class="menu-lines" aria-hidden="true">
+              <span></span>
+              <span></span>
+            </span>
+          </button>
+        </header>
+
+        <aside class="menu-overlay" id="menu-overlay" aria-hidden="true">
+          <button class="menu-close" type="button" aria-label="Close menu">
+            <span></span>
+            <span></span>
+          </button>
+          <div class="menu-counter" aria-hidden="true">01</div>
+          <nav class="overlay-nav">
+            <a href="#about" data-number="01"><span>01</span><strong>about</strong></a>
+            <a href="#work" data-number="02"><span>02</span><strong>work</strong></a>
+            <a href="#experience" data-number="03"><span>03</span><strong>experience</strong></a>
+            <a href="#skills" data-number="04"><span>04</span><strong>skills</strong></a>
+            <a href="#contact" data-number="05"><span>05</span><strong>connect</strong></a>
+          </nav>
+        </aside>
+
+        <section class="hero section reveal">
+          <div class="hero-grid" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <p class="micro">hi, i'm anshu</p>
+          <div class="hero-copy-swap">
+            <h1 class="glow-text">
+            i build websites and products that feel
+            <span>clean, fast, and actually professional.</span>
+            </h1>
+            <p class="hero-text glow-text">
+              i'm a coder who likes sharp interfaces, thoughtful structure, and
+              simple ideas executed really well. this portfolio is designed to
+              feel closer to an imaginations.
+            </p>
+          </div>
+        </section>
+
+        <section class="section split reveal" id="about">
+          <div class="section-label">
+            <p class="micro">01</p>
+            <h2 class="glow-text">about</h2>
+          </div>
+          <div class="section-body">
+            <div class="body-rule" aria-hidden="true"></div>
+            <p class="glow-text">
+              a curious mind who loves problem solving in different forms,
+              married to math, and currently in a toxic relation with mining.
+            </p>
+            <p class="glow-text">
+              i pursue hobbies like chess, badminton, and swimming, and i like
+              building things that feel sharp, useful, and a little unexpected.
+            </p>
+          </div>
+        </section>
+
+        <section class="section split reveal" id="work">
+          <div class="section-label">
+            <p class="micro">02</p>
+            <h2 class="glow-text">on going projects</h2>
+          </div>
+          <div class="section-body listing">
+            <article class="list-item">
+              <div class="list-meta">
+                <span>2026</span>
+                <span>music + product</span>
+              </div>
+              <div class="list-main">
+                <h3 class="glow-text">spotify playlist rater</h3>
+                <p class="glow-text">
+                  a project built around rating and understanding playlists with
+                  a cleaner way to judge mood, taste, and listening patterns.
+                </p>
+              </div>
+            </article>
+
+            <article class="list-item">
+              <div class="list-meta">
+                <span>2026</span>
+                <span>systems + search</span>
+              </div>
+              <div class="list-main">
+                <h3 class="glow-text">search engine with cpp</h3>
+                <p class="glow-text">
+                  a search engine experiment in cpp focused on understanding how
+                  indexing, retrieval, and performance work from the ground up.
+                </p>
+              </div>
+            </article>
+
+            <article class="list-item">
+              <div class="list-meta">
+                <span>2026</span>
+                <span>streaming + privacy</span>
+              </div>
+              <div class="list-main">
+                <h3 class="glow-text">watch movies together</h3>
+                <p class="glow-text">
+                  a website where you can watch movies with anyone, designed to
+                  be fully end-to-end encrypted while still feeling smooth and
+                  social.
+                </p>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="section split reveal" id="experience">
+          <div class="section-label">
+            <p class="micro">03</p>
+            <h2 class="glow-text">experience</h2>
+          </div>
+          <div class="section-body listing">
+            <article class="list-item compact">
+              <div class="list-meta">
+                <span>now</span>
+                <span>building</span>
+              </div>
+              <div class="list-main">
+                <h3 class="glow-text">personal projects</h3>
+                <p class="glow-text">
+                  exploring product ideas, improving frontend craft, and getting
+                  better at shipping complete experiences.
+                </p>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="section split reveal" id="skills">
+          <div class="section-label">
+            <p class="micro">04</p>
+            <h2 class="glow-text">skills</h2>
+          </div>
+          <div class="section-body">
+            <div class="body-rule" aria-hidden="true"></div>
+            <div class="pill-grid">
+              <button type="button" class="skill-chip glow-text">full stack dev</button>
+              <button type="button" class="skill-chip glow-text">data structures</button>
+              <button type="button" class="skill-chip glow-text">algo</button>
+              <button type="button" class="skill-chip glow-text">oops</button>
+            </div>
+          </div>
+        </section>
+
+        <section class="section contact reveal" id="contact">
+          <p class="micro">05</p>
+          <h2 class="glow-text">let's build something good.</h2>
+          <p class="contact-text glow-text">
+            if you want to work together, collaborate on a project, or just say
+            hello, reach out. swap these links with your real ones and this page
+            is ready to become yours.
+          </p>
+          <div class="contact-links">
+            <a class="glow-text" href="mailto:anshu@example.com">email</a>
+            <a class="glow-text" href="https://github.com/" target="_blank" rel="noreferrer">github</a>
+            <a class="glow-text" href="https://www.linkedin.com/" target="_blank" rel="noreferrer">linkedin</a>
+            <a class="glow-text" href="#">resume</a>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
