@@ -745,6 +745,69 @@ h3 {
   white-space: nowrap;
 }
 
+.education-list {
+  display: grid;
+  gap: 18px;
+}
+
+.education-item {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 24px;
+  padding: 18px 0;
+  border-top: 1px solid var(--line);
+}
+
+.education-item:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.education-brand {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  min-width: 0;
+}
+
+.education-logo-shell {
+  width: 72px;
+  height: 72px;
+  border-radius: 22px;
+  border: 1px solid var(--line-strong);
+  background:
+    radial-gradient(circle at top, rgba(255, 255, 255, 0.1), transparent 60%),
+    rgba(255, 255, 255, 0.03);
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+
+.education-logo {
+  width: 60px;
+  height: 60px;
+  display: block;
+}
+
+.education-copy h3 {
+  font-size: 1.28rem;
+  line-height: 1.15;
+  color: var(--text);
+}
+
+.education-copy p {
+  margin-top: 10px;
+  color: var(--muted);
+}
+
+.education-degree {
+  color: var(--muted);
+  font-size: 0.98rem;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
 .pill-grid {
   display: flex;
   flex-wrap: wrap;
@@ -963,11 +1026,26 @@ body[data-theme="light"] .theme-icon-sun {
     align-items: flex-start;
   }
 
+  .education-item {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    align-items: flex-start;
+  }
+
   .experience-brand {
     gap: 14px;
   }
 
+  .education-brand {
+    align-items: flex-start;
+    gap: 14px;
+  }
+
   .experience-date {
+    white-space: normal;
+  }
+
+  .education-degree {
     white-space: normal;
   }
 
