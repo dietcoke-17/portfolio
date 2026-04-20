@@ -20,6 +20,21 @@
   --max: 1240px;
 }
 
+body[data-theme="light"] {
+  --bg: #f4f1e8;
+  --bg-soft: #ebe5d8;
+  --panel: #f8f4ea;
+  --text: #14120f;
+  --muted: #6c665d;
+  --text-soft: #26211c;
+  --line: rgba(20, 18, 15, 0.1);
+  --line-strong: rgba(20, 18, 15, 0.2);
+  --line-sharp: rgba(20, 18, 15, 0.3);
+  --cursor-core: rgba(20, 18, 15, 0.88);
+  --cursor-ring: rgba(20, 18, 15, 0.5);
+  --accent: #14120f;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -35,6 +50,12 @@ body {
   color: var(--text);
   font-family: "Manrope", sans-serif;
   cursor: none;
+  transition: background 220ms ease, color 220ms ease;
+}
+
+body[data-theme="light"] {
+  background:
+    linear-gradient(180deg, #f7f2e8 0%, #efe9dd 100%);
 }
 
 body::selection {
@@ -643,6 +664,57 @@ h3 {
   max-width: 780px;
 }
 
+.experience-list {
+  display: grid;
+  gap: 18px;
+}
+
+.experience-item {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 24px;
+  padding: 18px 0;
+  border-top: 1px solid var(--line);
+}
+
+.experience-item:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.experience-brand {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-width: 0;
+}
+
+.experience-logo {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid var(--line-strong);
+  background: rgba(255, 255, 255, 0.04);
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.experience-copy h3 {
+  font-size: 1.28rem;
+  line-height: 1.1;
+  text-transform: lowercase;
+  color: var(--text);
+}
+
+.experience-date {
+  color: var(--muted);
+  font-size: 0.98rem;
+  line-height: 1.4;
+  text-transform: lowercase;
+  white-space: nowrap;
+}
+
 .pill-grid {
   display: flex;
   flex-wrap: wrap;
@@ -680,6 +752,104 @@ h3 {
 
 .contact-text {
   max-width: 720px;
+}
+
+.contact-menu {
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+  margin-top: 20px;
+  padding: 8px 10px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.035);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.03),
+    0 18px 40px rgba(0, 0, 0, 0.18);
+  backdrop-filter: blur(12px);
+  position: relative;
+  z-index: 2;
+}
+
+body[data-theme="light"] .contact-menu {
+  background: rgba(20, 18, 15, 0.035);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.35),
+    0 18px 34px rgba(68, 54, 28, 0.12);
+}
+
+.contact-icon-button {
+  width: 42px;
+  height: 42px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-soft);
+  background: transparent;
+  border: 0;
+  border-radius: 999px;
+  cursor: none;
+  transition:
+    color 180ms ease,
+    background 180ms ease,
+    transform 180ms ease;
+  position: relative;
+}
+
+.contact-icon-button + .contact-icon-button::before,
+.contact-icon-button + a::before,
+a.contact-icon-button + a::before {
+  content: "";
+  position: absolute;
+  left: -1px;
+  top: 9px;
+  bottom: 9px;
+  width: 1px;
+  background: var(--line);
+}
+
+.contact-icon-button svg {
+  width: 20px;
+  height: 20px;
+  display: block;
+}
+
+.contact-icon-button:hover,
+.contact-icon-button:focus-visible {
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.06);
+  transform: translateY(-1px);
+}
+
+body[data-theme="light"] .contact-icon-button:hover,
+body[data-theme="light"] .contact-icon-button:focus-visible {
+  background: rgba(20, 18, 15, 0.06);
+}
+
+.theme-toggle {
+  position: relative;
+}
+
+.theme-icon {
+  position: absolute;
+  transition:
+    opacity 180ms ease,
+    transform 180ms ease;
+}
+
+.theme-icon-sun {
+  opacity: 0;
+  transform: scale(0.7) rotate(-18deg);
+}
+
+body[data-theme="light"] .theme-icon-moon {
+  opacity: 0;
+  transform: scale(0.7) rotate(18deg);
+}
+
+body[data-theme="light"] .theme-icon-sun {
+  opacity: 1;
+  transform: scale(1) rotate(0deg);
 }
 
 .reveal {
@@ -756,6 +926,20 @@ h3 {
     gap: 14px;
   }
 
+  .experience-item {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    align-items: flex-start;
+  }
+
+  .experience-brand {
+    gap: 14px;
+  }
+
+  .experience-date {
+    white-space: normal;
+  }
+
   .hero {
     align-items: stretch;
   }
@@ -769,6 +953,10 @@ h3 {
     flex-direction: column;
     align-items: flex-start;
     gap: 14px;
+  }
+
+  .contact-menu {
+    padding: 7px 9px;
   }
 
   .hero-copy-swap {

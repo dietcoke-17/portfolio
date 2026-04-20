@@ -8,6 +8,8 @@ const menuCounter = document.querySelector(".menu-counter");
 const interactive = document.querySelectorAll("a, button");
 const mainVertical = document.querySelector(".frame-vertical-main");
 const mainHorizontal = document.querySelector(".frame-horizontal");
+const themeToggle = document.querySelector(".theme-toggle");
+const THEME_KEY = "portfolio-theme";
 
 const observer = new IntersectionObserver(
   (entries) => {
@@ -24,6 +26,34 @@ const observer = new IntersectionObserver(
 );
 
 items.forEach((item) => observer.observe(item));
+
+const applyTheme = (theme) => {
+  document.body.dataset.theme = theme;
+
+  if (!themeToggle) {
+    return;
+  }
+
+  const isLight = theme === "light";
+  themeToggle.setAttribute(
+    "aria-label",
+    isLight ? "Switch to dark mode" : "Switch to light mode"
+  );
+  themeToggle.setAttribute("aria-pressed", String(isLight));
+};
+
+const savedTheme = localStorage.getItem(THEME_KEY);
+applyTheme(savedTheme === "light" ? "light" : "dark");
+
+if (themeToggle) {
+  themeToggle.addEventListener("click", () => {
+    const nextTheme =
+      document.body.dataset.theme === "light" ? "dark" : "light";
+
+    applyTheme(nextTheme);
+    localStorage.setItem(THEME_KEY, nextTheme);
+  });
+}
 
 if (toggle && overlay) {
   toggle.addEventListener("click", () => {
