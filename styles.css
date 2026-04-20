@@ -624,6 +624,14 @@ h3 {
   gap: 0;
 }
 
+.project-item-extra {
+  display: none;
+}
+
+.project-list.is-expanded .project-item-extra {
+  display: grid;
+}
+
 .list-item {
   display: grid;
   grid-template-columns: 160px minmax(0, 1fr);
@@ -662,6 +670,27 @@ h3 {
 
 .list-main p {
   max-width: 780px;
+}
+
+.projects-toggle {
+  justify-self: start;
+  margin-top: 18px;
+  padding: 0 0 4px;
+  border: 0;
+  border-bottom: 1px solid var(--line-strong);
+  background: transparent;
+  color: var(--text-soft);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.85rem;
+  text-transform: lowercase;
+  cursor: none;
+  transition: color 180ms ease, transform 180ms ease;
+}
+
+.projects-toggle:hover,
+.projects-toggle:focus-visible {
+  color: var(--text);
+  transform: translateX(2px);
 }
 
 .experience-list {
@@ -759,6 +788,7 @@ h3 {
   align-items: center;
   gap: 0;
   margin-top: 20px;
+  margin-inline: auto;
   padding: 8px 10px;
   border: 1px solid var(--line);
   border-radius: 999px;

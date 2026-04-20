@@ -9,6 +9,8 @@ const interactive = document.querySelectorAll("a, button");
 const mainVertical = document.querySelector(".frame-vertical-main");
 const mainHorizontal = document.querySelector(".frame-horizontal");
 const themeToggle = document.querySelector(".theme-toggle");
+const projectList = document.querySelector(".project-list");
+const projectsToggle = document.querySelector(".projects-toggle");
 const THEME_KEY = "portfolio-theme";
 
 const observer = new IntersectionObserver(
@@ -52,6 +54,15 @@ if (themeToggle) {
 
     applyTheme(nextTheme);
     localStorage.setItem(THEME_KEY, nextTheme);
+  });
+}
+
+if (projectList && projectsToggle) {
+  projectsToggle.addEventListener("click", () => {
+    const isExpanded = projectList.classList.toggle("is-expanded");
+
+    projectsToggle.textContent = isExpanded ? "view less" : "view more";
+    projectsToggle.setAttribute("aria-expanded", String(isExpanded));
   });
 }
 
