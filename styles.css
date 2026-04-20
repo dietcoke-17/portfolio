@@ -624,12 +624,13 @@ h3 {
   gap: 0;
 }
 
-.project-item-extra {
+.project-extra-group[hidden] {
   display: none;
 }
 
-.project-list.is-expanded .project-item-extra {
+.project-extra-group {
   display: grid;
+  gap: 0;
 }
 
 .list-item {
@@ -673,7 +674,7 @@ h3 {
 }
 
 .projects-toggle {
-  justify-self: start;
+  justify-self: end;
   margin-top: 18px;
   padding: 0 0 4px;
   border: 0;

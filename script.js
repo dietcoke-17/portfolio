@@ -11,6 +11,7 @@ const mainHorizontal = document.querySelector(".frame-horizontal");
 const themeToggle = document.querySelector(".theme-toggle");
 const projectList = document.querySelector(".project-list");
 const projectsToggle = document.querySelector(".projects-toggle");
+const projectExtraGroup = document.querySelector(".project-extra-group");
 const THEME_KEY = "portfolio-theme";
 
 const observer = new IntersectionObserver(
@@ -57,10 +58,14 @@ if (themeToggle) {
   });
 }
 
-if (projectList && projectsToggle) {
-  projectsToggle.addEventListener("click", () => {
-    const isExpanded = projectList.classList.toggle("is-expanded");
+if (projectExtraGroup && projectsToggle) {
+  projectExtraGroup.hidden = true;
 
+  projectsToggle.addEventListener("click", () => {
+    const isExpanded = projectExtraGroup.hidden;
+
+    projectExtraGroup.hidden = !isExpanded;
+    projectList?.classList.toggle("is-expanded", isExpanded);
     projectsToggle.textContent = isExpanded ? "view less" : "view more";
     projectsToggle.setAttribute("aria-expanded", String(isExpanded));
   });
